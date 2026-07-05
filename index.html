@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body class="h-screen w-full text-text bg-bg">
+    <main class="w-full flex flex-col items-center gap-4 p-4">
+      <header class="max-w-xl space-y-4 w-full mt-5">
+        <div class="w-full flex justify-between items-center">
+          <button
+            id="menu-btn"
+            class="flex gap-1 items-center text-text-inverce font-bold text-xl cursor-pointer"
+          >
+            <i data-lucide="menu" class="icon-menu w-5 h-5"></i>
+            
+            <h1 class="">Calc</h1>
+          </button>
+          <div class="space-y-1">
+            <div class="flex gap-8 items-center">
+              <i data-lucide="Sun" class="text-yellow-400"></i>
+              <i data-lucide="Moon" class="text-yellow-400"></i>
+            </div>
+
+            <button
+              class="rounded-full bg-operator py-4 px-10 relative"
+              id="theme-btn"
+            >
+              <div
+                class="circle absolute left-1 -translate-y-1/2 top-1/2 bg-alt rounded-full h-5 w-5 transition-all duration-300 ease-linear"
+              ></div>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      
+        <aside
+          id="menu"
+          class="absolute hidden top-0 left-0 w-full h-screen bg-bg/80 p-6 flex-col-reverse lg:flex-row overflow-hidden backdrop-blur-md text-text-inverce menu transition-all justify-between duration-300 ease-in-out mt-2.5"
+        >
+        <div class="relative menu-content  mx-auto lg:mx-0 lg:w-11/12 w-full p-2 ">
+          <div
+            class=" relative lg:w-20 w-full  p-4 h-auto flex lg:flex-col flex-row    gap-2 bg-operator/30 rounded-xl   items-center overflow-scroll hide-scrollbar "
+          >
+            <!-- آیتم ۱: BMI -->
+            <div class="menu-item">
+              <button
+                class="group flex flex-col items-center justify-center w-14 h-14 rounded-full bg-operator backdrop-blur-md border border-bg/20 shadow-lg hover:bg-bg transition-all duration-300"
+              >
+                <i data-lucide="scale3D" class="w-5 h-5"></i>
+                <span class="text-[8px] font-bold uppercase mt-1">BMI</span>
+              </button>
+            </div>
+
+            <!-- آیتم ۲: Age -->
+            <div class="menu-item">
+              <button
+                class="group flex flex-col items-center justify-center w-14 h-14 rounded-full bg-operator backdrop-blur-md border border-bg/20 shadow-lg hover:bg-bg transition-all duration-300"
+              >
+                <i data-lucide="cake" class="w-5 h-5"></i>
+                <span class="text-[8px] font-bold uppercase mt-1">Age</span>
+              </button>
+            </div>
+
+            <!-- آیتم ۳: Date -->
+            <div class="menu-item">
+              <button
+                class="group flex flex-col items-center justify-center w-14 h-14 rounded-full bg-operator backdrop-blur-md border border-bg/20 shadow-lg hover:bg-bg transition-all duration-300"
+              >
+                <i data-lucide="calendar" class="w-5 h-5"></i>
+                <span class="text-[8px] font-bold uppercase mt-1">Date</span>
+              </button>
+            </div>
+
+            <!-- آیتم ۴: Mass -->
+            <div class="menu-item">
+              <button
+                class="group flex flex-col items-center justify-center w-14 h-14 rounded-full bg-operator backdrop-blur-md border border-bg/20 shadow-lg hover:bg-bg transition-all duration-300"
+              >
+                <i data-lucide="weight" class="w-5 h-5"></i>
+                <span class="text-[8px] font-bold uppercase mt-1">Mass</span>
+              </button>
+            </div>
+            
+
+            <div class="menu-item">
+              <button
+                class="group flex flex-col items-center justify-center w-14 h-14 rounded-full bg-operator backdrop-blur-md border border-bg/20 shadow-lg hover:bg-bg transition-all duration-300"
+              >
+                <i data-lucide="ruler" class="w-5 h-5"></i>
+                <span class="text-[8px] font-bold uppercase mt-1">Length</span>
+              </button>
+            </div>
+
+            <!-- آیتم ۵: Speed -->
+            <div class="menu-item">
+              <button
+                class="group flex flex-col items-center justify-center w-14 h-14 rounded-full bg-operator backdrop-blur-md border border-bg/20 shadow-lg hover:bg-bg transition-all duration-300"
+              >
+                <i data-lucide="gauge" class="w-5 h-5"></i>
+                <span class="text-[8px] font-bold uppercase mt-1">Speed</span>
+              </button>
+            </div>
+
+            <div class="menu-item">
+              <button
+                class="group flex flex-col items-center justify-center w-14 h-14 rounded-full bg-operator backdrop-blur-md border border-bg/20 shadow-lg hover:bg-bg transition-all duration-300"
+              >
+                <i data-lucide="Thermometer" class="w-5 h-5"></i>
+                <span class="text-[8px] font-bold uppercase mt-1">temp</span>
+              </button>
+            </div>
+
+            <div class="menu-item">
+              <button
+                class="group flex flex-col items-center justify-center w-14 h-14 rounded-full bg-operator backdrop-blur-md border border-bg/20 shadow-lg hover:bg-bg transition-all duration-300"
+              >
+                <i data-lucide="clock1" class="w-5 h-5"></i>
+                <span class="text-[8px] font-bold uppercase mt-1">Time</span>
+              </button>
+            </div>
+          </div>
+          </div>
+          <button class="icon-close  p-2 rounded-full bg-alt  w-10 h-10 flex justify-center items-center">
+            <i data-lucide="x" class="w-8 h-8 text-primary"></i>
+          </button>
+        </aside>
+      
+
+      <div class="max-w-xl space-y-4 w-full">
+        <div class="w-full bg-primary rounded-[10px] h-30">
+          <input
+            name="display"
+            id="display"
+            maxlength="16"
+            class="bg-transparent border-none focus:outline-none p-8 w-full h-full text-5xl font-bold"
+            type="text"
+          />
+        </div>
+        <div
+          class="bg-operator grid grid-cols-4 p-6 md:gap-5 gap-4 rounded-[10px] font-bold md:text-3xl text-xl numpad"
+        >
+          <button
+            class="p-2.5 rounded-[10px] bg-bg shadow-btn text-text-inverce"
+            data-value="7"
+          >
+            7
+          </button>
+          <button
+            class="p-2.5 rounded-[10px] bg-bg shadow-btn text-text-inverce"
+            data-value="8"
+          >
+            8
+          </button>
+          <button
+            class="p-2.5 rounded-[10px] bg-bg shadow-btn text-text-inverce"
+            data-value="9"
+          >
+            9
+          </button>
+          <button
+            class="p-2.5 rounded-[10px] shadow-accent bg-accent text-primary"
+            id="delete"
+          >
+            DEL
+          </button>
+          <button
+            class="p-2.5 rounded-[10px] bg-bg shadow-btn text-text-inverce"
+            data-value="4"
+          >
+            4
+          </button>
+          <button
+            class="p-2.5 rounded-[10px] bg-bg shadow-btn text-text-inverce"
+            data-value="5"
+          >
+            5
+          </button>
+          <button
+            class="p-2.5 rounded-[10px] bg-bg shadow-btn text-text-inverce"
+            data-value="6"
+          >
+            6
+          </button>
+          <button
+            class="p-2.5 rounded-[10px] bg-bg shadow-btn text-text-inverce"
+            data-value="+"
+          >
+            +
+          </button>
+          <button
+            class="p-2.5 rounded-[10px] bg-bg shadow-btn text-text-inverce"
+            data-value="1"
+          >
+            1
+          </button>
+          <button
+            class="p-2.5 rounded-[10px] bg-bg shadow-btn text-text-inverce"
+            data-value="2"
+          >
+            2
+          </button>
+          <button
+            class="p-2.5 rounded-[10px] bg-bg shadow-btn text-text-inverce"
+            data-value="3"
+          >
+            3
+          </button>
+          <button
+            class="p-2.5 rounded-[10px] bg-bg shadow-btn text-text-inverce"
+            data-value="-"
+          >
+            -
+          </button>
+          <button
+            class="p-2.5 rounded-[10px] bg-bg shadow-btn text-text-inverce"
+            data-value="."
+          >
+            .
+          </button>
+          <button
+            class="p-2.5 rounded-[10px] bg-bg shadow-btn text-text-inverce"
+            data-value="0"
+          >
+            0
+          </button>
+          <button
+            class="p-2.5 rounded-[10px] bg-bg shadow-btn text-text-inverce"
+            data-value="/"
+          >
+            /
+          </button>
+          <button
+            class="p-2.5 rounded-[10px] bg-bg shadow-btn flex justify-center items-center text-text-inverce"
+            data-value="*"
+          >
+            <i data-lucide="X"></i>
+          </button>
+          <button
+            class="p-2.5 rounded-[10px] bg-accent shadow-accent text-primary col-span-2"
+            id="reset"
+          >
+            RESET
+          </button>
+          <button
+            class="p-2.5  rounded-[10px] bg-alt shadow-alt text-primary flex justify-center items-center col-span-2"
+            id="equal"
+          >
+            =
+          </button>
+          
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="/src/index.js"></script>
+  </body>
+</html>

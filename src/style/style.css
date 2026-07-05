@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+body {
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* حذف مورد تکراری */
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+@theme {
+    --color-bg: var(--bg);
+    --color-text: var(--text);
+    --color-alt: var(--alt);
+    --color-accent: var(--accent);
+    --color-primary: var(--primary);
+    --color-sec: var(--sec);
+    --color-operator:var(--operator);
+    --color-text-inverce:var(--text-inverce);
+    --shadow-btn:var(--btn-shadow);
+    --shadow-accent:var(--accent-shadow);
+    --shadow-alt:var(--alt-shadow);
+
+}
+
+@layer base {
+    :root {
+        /* کاماها به نقطه‌ویرگول تغییر یافتند */
+        --primary: hsl(0deg 0% 92.94%);
+            --operator: rgb(209, 204, 204);
+            --accent: hsl(185, 42%, 37%);
+            --text: #35352c;
+            --bg:#e6e6e6;
+            --alt:hsl(25, 98%, 40%);
+            --sec:#ededed;
+            --text-inverce:#000;
+            --btn-shadow: 0px 4px 0px hsl(28, 16%, 65%);
+            --alt-shadow: 0px 4px 0px hsl(25, 98%, 30%);
+            --accent-shadow: 0px 4px 0px hsl(185, 42%, 25%);
+           
+       
+    }
+  
+    .dark {
+        --primary: #d1cccc;
+        --operator: #232c43;
+        --accent: #637097;
+        --text: #444b5a;
+        --bg: hsl(221, 27%, 31%);
+        --alt: #d03f2f;
+        --sec: #182034;
+        --text-inverce: #fff;
+        --btn-shadow: 0px 4px 0px hsl(221, 27%, 65%);
+        --alt-shadow: 0px 4px 0px hsl(25, 98%, 30%);
+        --accent-shadow: 0px 4px 0px hsl(225, 21%, 35%);
+    }
+
+
+    @media (prefers-color-scheme: dark) {
+        :root:not(.light) {
+            --primary: #d1cccc;
+            --operator: #232c43;
+            --accent: hsl(225, 21%, 49%);
+            --text: #444b5a;
+            --bg:#3a4764;
+            --alt:#d03f2f;
+            --sec:#182034;
+            --text-inverce:#fff;
+            --btn-shadow: 0px 4px 0px hsl(221, 27%, 65%);
+            --alt-shadow: 0px 4px 0px hsl(25, 98%, 30%);
+            --accent-shadow: 0px 4px 0px hsl(225, 21%, 35%);
+        }
+    }
+}
+
+
+
+.hide-scrollbar {
+    overflow: auto;
+    /* Firefox */
+    scrollbar-width: none;
+    /* IE 10+ */
+    -ms-overflow-style: none;
+  
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}

@@ -1,0 +1,22 @@
+{
+  "name": "calculate",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "predeploy": "npm run build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.1",
+    "lucide": "^1.20.0",
+    "tailwindcss": "^4.3.1",
+    "vite": "^8.0.16"
+  }
+}
